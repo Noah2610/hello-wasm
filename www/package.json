@@ -1,0 +1,16 @@
+{
+  "name": "hello-wasm",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Noah2610/hello-wasm.git"
+  },
+  "author": "Noah Rosenzweig <rosenzweig.noah@gmail.com>",
+  "license": "Unlicense",
+  "homepage": "https://github.com/Noah2610/hello-wasm"
+}

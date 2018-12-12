@@ -1,0 +1,13 @@
+#!/bin/bash
+
+root="$( cd "$( dirname "$0" )/.."; pwd )"
+out_dir="$root/www"
+target="wasm32-unknown-unknown"
+target_dir="${root}/target/${target}"
+
+if cargo +nightly build --target $target; then
+  mkdir -p "$out_dir"
+  [ -f "${target_dir}/debug/hello_wasm.wasm" ]   && wasm-bindgen "${target_dir}/debug/hello_wasm.wasm"   --out-dir "$out_dir"
+  [ -f "${target_dir}/release/hello_wasm.wasm" ] && wasm-bindgen "${target_dir}/release/hello_wasm.wasm" --out-dir "$out_dir"
+  true
+fi
