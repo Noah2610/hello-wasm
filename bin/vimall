@@ -1,4 +1,4 @@
 #!/usr/bin/bash
-files=("Cargo.toml" "vimrc")
-files_find=($( find src/ -iname "*.rs" ))
+files=("Cargo.toml" "vimrc" "www/package.json")
+files_find=($( find src/ www/ -iname "*.rs" -o -iname "*.js" -o -iname "*.html" -o -iname "*.css" ))
 vim ${files[@]} ${files_find[@]}
